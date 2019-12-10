@@ -1,18 +1,3 @@
-'''
-input => two lists of lists of numbers
-output => one list of lists of numbers
-requirements => numbers in each of the returned lists are the sum of all similar
-indices in each of the lists passed to the function
-
-i.e. the first index in the first list in each outer list is added together 
-and is the first index of the first list returned
-
-strategy => 
-use a generator expression to create an iterable over which you can loop for a list
-comprehension
-'''
-
-
 def add(*args):
     # args is an iterable that contains lists that contain lists.
     # each outer list is an iterable that contains two lists
@@ -22,9 +7,12 @@ def add(*args):
     # ^^ need the same index from same inner array in all outer arrays
     # then can sum each array so it's
     # [[3, -3], [-3, -3]]
-
+    # TODO
+    # use generators to... generate matched_by_index
+    # handle assumption that all lists passed are the same length
+    
     matched_by_index = []
-    # assumes all lists passed are the same length
+    
     for j in range(len(args[0])):
         by_inner_index = []
         for k in range(len(args[0][0])):
