@@ -31,13 +31,12 @@ def csv_from_generator(generator, filename, in_quote):
 def fix_csv(*args):
     # original file = args[0]
     # new file = args[1]
-    print(args[0])
-    de_piped = list_from_csv(args[0])
+    print(args)
+    de_piped = list_from_file(args[0][1])
     for line in de_piped:
         print(line)
     csv_from_generator(de_piped, args[1], )
 
 
 if __name__ == '__main__':
-    print(sys.argv)
-    fix_csv(sys.argv[1], sys.argv[2])
+    fix_csv(sys.argv)
